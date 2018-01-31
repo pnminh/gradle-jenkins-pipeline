@@ -37,7 +37,7 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
-def artifactory_repo_url = 'http://localhost:8081/artifactory'
+def artifactory_repo_url = 'http://localhost:9081/artifactory'
 mainClassName = 'com.minh.gradle.main.Main'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
