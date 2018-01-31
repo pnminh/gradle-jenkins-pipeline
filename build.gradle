@@ -75,3 +75,8 @@ publishing {
         }
     }
 }
+task showUserPass{
+    doLast {
+        println "Artifactory user/pass:" + project.getProperty('artifactory_user')+"/"+project.getProperty('artifactory_pass')
+    }
+}
