@@ -50,7 +50,7 @@ dependencies{
 }
 jar{
     baseName = 'minh-gradle'
-    version = '0.1.0'
+    version = '0.1.1'
 }
 artifactory {
     contextUrl = artifactory_repo_url
@@ -70,7 +70,7 @@ publishing {
         mavenJava(MavenPublication) {
             from components.java
             artifactId 'minh-gradle'
-            version '0.1.0'
+            version '0.1.1'
             groupId 'com.minh.gradle'
         }
     }
