@@ -27,6 +27,3 @@ hs_err_pid*
 .gradle
 gradle-jenkins-pipeline.iml
 build
-gradle
-gradlew
-gradlew.bat
