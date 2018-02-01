@@ -11,4 +11,8 @@ node {
         //branch name from Jenkins environment variables
          sh "printenv"
         }
+     stage ('Get branch name'){
+         //this will check the branch name
+         sh "git branch"
+     }
 }
