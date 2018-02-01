@@ -7,8 +7,8 @@ node {
             // Checkout code from repository and update any submodules
             checkout scm
        }
-      stage ('Stage Build'){
+      stage ('Print environment variables'){
         //branch name from Jenkins environment variables
-         sh "echo 'My branch is: ${env.BRANCH_NAME}'"
+         sh "printenv"
         }
 }
