@@ -13,6 +13,10 @@ node {
         }
      stage ('Get branch name'){
          //this will check the current branch (with *), and only keep the branch name (omit * and space)
-         sh "git branch | grep \\* | cut -d ' ' -f2"
+         GIT_BRANCH = sh (
+                 script: 'git branch | grep \\* | cut -d \' \' -f2',
+                 returnStdout: true
+         ).trim()
+         sh "echo $GIT_BRANCH"
      }
 }
