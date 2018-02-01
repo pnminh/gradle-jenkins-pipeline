@@ -52,6 +52,10 @@ def getCurrentGitBranch() {
     }
     return gitBranch
 }
+//allow gradle wrapper to download the gradle version
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.4.1'
+}
 def artifactory_repo_url = 'http://172.17.0.2:8081/artifactory'
 def release_version = project.hasProperty('version') ? project.getProperty('version') : 'latest'
 def group_id='com.minh.gradle'
