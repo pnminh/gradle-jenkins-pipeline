@@ -39,11 +39,25 @@ apply plugin: 'java'
 apply plugin: 'application'
 apply plugin: 'maven-publish'
 apply plugin: 'com.jfrog.artifactory'
+def getCurrentGitBranch() {
+    def gitBranch = "Unknown branch"
+    try {
+        def workingDir = new File("${project.projectDir}")
+        def result = 'git rev-parse --abbrev-ref HEAD'.execute(null, workingDir)
+        result.waitFor()
+        if (result.exitValue() == 0) {
+            gitBranch = result.text.trim()
+        }
+    } catch (e) {
+    }
+    return gitBranch
+}
 def artifactory_repo_url = 'http://172.17.0.3:8081/artifactory'
 def release_version = project.hasProperty('version') ? project.getProperty('version') : 'latest'
 def group_id='com.minh.gradle'
 def artifact_id='minh.gradle'
 def version_prop_file='gradle.properties'
+def branch = getCurrentGitBranch()
 mainClassName = 'com.minh.gradle.main.Main'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
