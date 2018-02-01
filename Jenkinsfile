@@ -12,7 +12,7 @@ node {
          sh "printenv"
         }
      stage ('Get branch name'){
-         //this will check the branch name
-         sh "git branch"
+         //this will check the current branch (with *), and only keep the branch name (omit * and space)
+         sh "git branch | grep \\* | cut -d ' ' -f2"
      }
 }
