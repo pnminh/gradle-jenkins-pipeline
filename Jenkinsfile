@@ -19,7 +19,7 @@ node {
         ).trim()
         sh "echo $GIT_BRANCH"
     }
-    stage('get gradle'){
-        sh "gradle version"
+    stage ('release'){
+        sh "./gradlew clean build release"
     }
 }
